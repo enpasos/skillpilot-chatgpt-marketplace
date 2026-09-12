@@ -1,0 +1,21 @@
+{
+  "interface": {
+    "display_name": "SkillPilot Coach v1",
+    "short_description": "Web-started SkillPilot learning coach",
+    "default_prompt": "Use $skillpilot-coach-v1 to continue the learning session prepared by SkillPilot."
+  },
+  "dependencies": {
+    "tools": [
+      {
+        "type": "mcp",
+        "value": "skillpilot-coach-v1",
+        "description": "Session validation, daily learning plans, subject switching, learning state, focus, active goals, mastery, verified recall, and assessments",
+        "transport": "streamable_http",
+        "url": "https://mcp-coach-v1.skillpilot.com/mcp"
+      }
+    ]
+  },
+  "policy": {
+    "allow_implicit_invocation": false
+  }
+}

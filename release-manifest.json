@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "marketplace": "skillpilot-chatgpt-marketplace",
+  "plugin": "skillpilot-coach-v1",
+  "version": "1.1.0",
+  "status": "experimental",
+  "hostAcceptance": {
+    "desktopInstall": "pending",
+    "oauth": "pending",
+    "desktopToolCall": "pending",
+    "webWithDesktopExited": "pending",
+    "nativeMobile": "pending",
+    "automaticUpdate": "pending"
+  },
+  "source": {
+    "repository": "https://github.com/enpasos/skillpilot",
+    "path": "ai/openai plugin/skillpilot-coach-v1"
+  },
+  "packageDigestSha256": "15508140a3770e21896554c1aececf78a2fc421531e5f316fc16ffb101045843",
+  "files": {
+    ".agents/plugins/marketplace.json": {
+      "bytes": 436,
+      "sha256": "461b4a3fe1144686a81152cc0f7b34c952c4f3c9eefab0af70564ac268f97717"
+    },
+    ".github/workflows/validate.yml": {
+      "bytes": 429,
+      "sha256": "efd9ede245457222f5f19b90c5846b383ca83401b4cb6a4e5c8bb00f66217cd6"
+    },
+    "CHANGELOG.md": {
+      "bytes": 595,
+      "sha256": "c62d91be66deaef9964728aa58258f0580ab6713f3ad69c21a787981e9102df4"
+    },
+    "LICENSE": {
+      "bytes": 10089,
+      "sha256": "6bbe4ace8a1818f89b96dfdda9f9d4b9a178bc047c3dc2511a3d93d51f86d7ae"
+    },
+    "README.md": {
+      "bytes": 3502,
+      "sha256": "d75fd792770263c978fb6e1fcc064b048e64f00da06914d544c2c1ad4dbb84ec"
+    },
+    "plugins/skillpilot-coach-v1/.codex-plugin/plugin.json": {
+      "bytes": 1839,
+      "sha256": "0d86a24c565e7461b5c45698fd21541f2b33fa92c4bca76e35e07afb5dbd63f9"
+    },
+    "plugins/skillpilot-coach-v1/.mcp.json": {
+      "bytes": 138,
+      "sha256": "951550967891b1091b27f175fa9c83c5b3f47eb45cffd4b5654423039a06829c"
+    },
+    "plugins/skillpilot-coach-v1/assets/favicon-96x96.png": {
+      "bytes": 2858,
+      "sha256": "4fcfde09b5cec8834d807b050d96c388e70c47c876e92c7f017a3be2bfe49d4d"
+    },
+    "plugins/skillpilot-coach-v1/assets/web-app-manifest-512x512.png": {
+      "bytes": 14619,
+      "sha256": "abacb5b257a9d2ac1d277d87af0a6dd10d30ca64ecadab960a76a99e04c5affa"
+    },
+    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/SKILL.md": {
+      "bytes": 14232,
+      "sha256": "a0636d51173346826e0f9ba5b0a552089b5bdfd0135e00b9aa778d64bdce08da"
+    },
+    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/agents/openai.yaml": {
+      "bytes": 686,
+      "sha256": "865686840c733dd96ba5521f59037c12e5dae0617bd162aca01e1d24d8a2ac74"
+    },
+    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/references/coaching-policy.md": {
+      "bytes": 23929,
+      "sha256": "1ebf1ba62551bc24195f7aed1772778d549027d8e1257e531368f59c3c31edf4"
+    },
+    "validate.mjs": {
+      "bytes": 6042,
+      "sha256": "2d9754f978e8b93c2d1c48f5977d6cb9a0ce4370423b9587706574cafb54da48"
+    }
+  }
+}
