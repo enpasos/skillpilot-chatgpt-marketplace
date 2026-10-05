@@ -1,6 +1,6 @@
 {
   "name": "skillpilot-coach-v1",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Web-started, session-bound SkillPilot learning coach with curriculum-grounded coaching and daily multi-subject learning plans.",
   "author": {
     "name": "enpasos GmbH",

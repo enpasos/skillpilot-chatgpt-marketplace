@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "marketplace": "skillpilot-chatgpt-marketplace",
   "plugin": "skillpilot-coach-v1",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "status": "experimental",
   "hostAcceptance": {
     "desktopInstall": "pending",
@@ -16,7 +16,7 @@
     "repository": "https://github.com/enpasos/skillpilot",
     "path": "ai/openai plugin/skillpilot-coach-v1"
   },
-  "packageDigestSha256": "6056eddba3287f85a4a292da52a97b60f6042dd01373c19ca79e58f2f9ba42c8",
+  "packageDigestSha256": "8a301fecdaf55de09cd39c9d8ba18191512aef7b1f910efaf2e75501e3274982",
   "files": {
     ".agents/plugins/marketplace.json": {
       "bytes": 436,
@@ -27,20 +27,20 @@
       "sha256": "efd9ede245457222f5f19b90c5846b383ca83401b4cb6a4e5c8bb00f66217cd6"
     },
     "CHANGELOG.md": {
-      "bytes": 1193,
-      "sha256": "f1b797c9267c230841ab38b6999d2fde2cf63227c6085d666ed5601b34d70846"
+      "bytes": 2402,
+      "sha256": "43d0d14ebcc67e39981aeeea50435f853225471961e59b5f94c06acd3d283283"
     },
     "LICENSE": {
       "bytes": 10089,
       "sha256": "6bbe4ace8a1818f89b96dfdda9f9d4b9a178bc047c3dc2511a3d93d51f86d7ae"
     },
     "README.md": {
-      "bytes": 3858,
-      "sha256": "1d6fb3f238dfa3e95a41751f296af851463a9af67a56bab4269fc8b2a6f57a76"
+      "bytes": 4675,
+      "sha256": "dc45f3a13df8d6473ec31c816972d0488f03cefdbd64ab632f92d23bb0eb0cdd"
     },
     "plugins/skillpilot-coach-v1/.codex-plugin/plugin.json": {
       "bytes": 1837,
-      "sha256": "8b71cbdab1185340bfc16c68c8f09adec0048582652163110a059a678a8099c1"
+      "sha256": "5cbf234f5f258daa3cc5e4f7f7880143f4aa65df5cd96abcf4ae1f23c0c1cd0f"
     },
     "plugins/skillpilot-coach-v1/.mcp.json": {
       "bytes": 138,
