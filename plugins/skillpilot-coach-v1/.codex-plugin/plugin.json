@@ -1,6 +1,6 @@
 {
   "name": "skillpilot-coach-v1",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Web-started, session-bound SkillPilot learning coach with curriculum-grounded coaching and daily multi-subject learning plans.",
   "author": {
     "name": "enpasos GmbH",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "SkillPilot Coach v1",
     "shortDescription": "Your SkillPilot learning coach",
-    "longDescription": "Continues a learning session prepared in the first-party SkillPilot web app, with curriculum-grounded coaching, a compact daily overview across planned subjects, authorized plan continuation and subject switching, learning-goal visualizations, mastery, verified recall, and assessment mode. Create or load your permanent SkillPilot ID, configure the learning context, and choose Start learning in SkillPilot; each start creates a fresh session and opens a new chat. OAuth authorizes the app, while the separate learning session selects the learner and controls the communication locale.",
+    "longDescription": "Continues a learning session prepared in the first-party SkillPilot web app, with curriculum-grounded coaching, a compact plan status for each planned subject, authorized plan continuation and subject switching, learning-goal visualizations, mastery, verified recall, and assessment mode. Create or load your permanent SkillPilot ID, configure the learning context, and choose Start learning in SkillPilot; each start creates a fresh session and opens a new chat. OAuth authorizes the app, while the separate learning session selects the learner and controls the communication locale.",
     "developerName": "enpasos GmbH",
     "category": "Education & Research",
     "capabilities": [
