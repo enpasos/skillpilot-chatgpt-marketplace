@@ -1,6 +1,6 @@
 {
-  "name": "skillpilot-coach-v1",
-  "version": "1.1.2",
+  "name": "skillpilot-coach",
+  "version": "1.2.0",
   "description": "Web-started, session-bound SkillPilot learning coach with curriculum-grounded coaching and daily multi-subject learning plans.",
   "author": {
     "name": "enpasos GmbH",
@@ -19,7 +19,7 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "SkillPilot Coach v1",
+    "displayName": "SkillPilot Coach",
     "shortDescription": "Your SkillPilot learning coach",
     "longDescription": "Continues a learning session prepared in the first-party SkillPilot web app, with curriculum-grounded coaching, a compact plan status for each planned subject, authorized plan continuation and subject switching, learning-goal visualizations, mastery, verified recall, and assessment mode. Create or load your permanent SkillPilot ID, configure the learning context, and choose Start learning in SkillPilot; each start creates a fresh session and opens a new chat. OAuth authorizes the app, while the separate learning session selects the learner and controls the communication locale.",
     "developerName": "enpasos GmbH",
@@ -33,6 +33,7 @@
     "composerIcon": "./assets/favicon-96x96.png",
     "logo": "./assets/web-app-manifest-512x512.png",
     "websiteURL": "https://skillpilot.com",
+    "supportURL": "https://skillpilot.com/imprint",
     "privacyPolicyURL": "https://skillpilot.com/privacy",
     "termsOfServiceURL": "https://skillpilot.com/legal",
     "defaultPrompt": [

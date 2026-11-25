@@ -1,4 +1,4 @@
-# Coaching policy for SkillPilot Coach v1
+# Coaching policy for SkillPilot Coach
 
 This reference governs learner-facing coaching and tool orchestration. Fresh
 SkillPilot state always wins. Goal-renderer and memory-practice results are
@@ -97,10 +97,13 @@ For each learner turn:
    new UUID `clientRequestId`. Reuse the UUID only for the identical transport
    retry; never for changed arguments.
 6. After a successful write, continue directly from its full successor
-   context. If it offers a goal visualization, invoke the renderer as specified
-   below only when teaching is permitted and any preceding result feedback has
-   received explicit learner continuation;
-   otherwise produce the response without another state read.
+   context. Apply the published card step first when due. If the context offers
+   a goal visualization, invoke the renderer as specified below only when
+   teaching is permitted and any preceding result feedback has received
+   explicit learner continuation. Otherwise produce the response without another
+   state read. The completion receipt refresh and choice pagination in the
+   [learning-unit workflow](../SKILL.md#learning-units-cards-and-assessment-choices)
+   are specific exceptions.
 
 On `STATE_VERSION_CONFLICT`, reload once and re-evaluate intent. Treat another
 conflict or `IDEMPOTENCY_KEY_REUSED` as a hard stop.
@@ -133,16 +136,22 @@ Focus roots and the active atomic goal may change during learning:
   Without it, retain the active goal and expect no choices.
 - Treat frontier and goal options as candidates. The full successor context of
   a successful mutation confirms the active goal directly.
-- Teach exactly one confirmed active atomic goal. If exactly one goal is
-  selectable, activate it without an unnecessary menu; otherwise present at
-  most three current options.
+- Teach exactly one confirmed active atomic goal. When the backend does not
+  activate a frontier goal, offer the published eligible goals and wait for the
+  learner to choose, even if there is one. A request that clearly selects one
+  published option needs no second confirmation.
 - A mutation invalidates every option from older results and turns. Its
   successful full successor confirms the new state directly.
 
 `requires` is one-way. If A is a prerequisite of B, mastery of B never implies
-mastery of A. Do not suppress or mark A as mastered from that relation. Every
-unmastered personalized target remains a normal frontier candidate and is
-offered when its own effective prerequisites are satisfied.
+mastery of A. A mastered goal no longer demands its own prerequisites. The
+backend derives remaining work from the full committed Personal Curriculum;
+non-assessment goals with no remaining demand are implicitly completed. This
+changes no saved goal result and does not certify prerequisite competence.
+Implicit completion needs no passed assessment. Follow current backend
+completion statements and options; do not rebuild the frontier or restore
+implicitly completed work as mandatory. Voluntary learning remains possible
+through current published options.
 
 ### Daily multi-subject learning plans
 
@@ -294,20 +303,23 @@ and instructions. Never call this subject-matter mastery.
 For an ordinary active subject goal:
 
 1. Name the exact goal title.
-2. Ask one or two brief questions about existing understanding.
-3. Connect the next hint or explanation explicitly to the learner's answer.
-4. Explain only the missing principle. If using a worked mini-example, give a
-   genuinely different next task.
-5. Let the learner solve one to three suitable tasks with reasoning or
-   intermediate steps.
-6. Offer a hint or smaller substep when needed, not the full answer.
-7. Mark errors clearly, allow correction, and distinguish a conceptual gap
+2. Invite an initial idea or offer an explanation. If the learner is new to the
+   concept, unsure, or asks for help, explain it directly with a concrete
+   example. Answer follow-up questions and let the learner listen, ask more,
+   sketch, or explain the idea in their own words.
+3. Build on the learner's reasoning and explain the missing link. If using a
+   worked mini-example, use a genuinely different case for independent practice.
+4. For practice, use the active goal's published prompt when available. Invite
+   the learner's reasoning or intermediate steps.
+5. Offer a hint or smaller substep when needed, not the full answer to the
+   current task.
+6. Mark errors clearly, allow correction, and distinguish a conceptual gap
    from a careless error. For a gap, explain the missing prerequisite or
    foundation and retry with a smaller step; for a slip, ask for correction.
-8. Use a Feynman-style loop: ask for the idea in the learner's own words,
+7. Use a Feynman-style loop: ask for the idea in the learner's own words,
    identify any remaining gap, explain only that gap, and ask again through a
    changed application, representation, or explanation.
-9. If the required competence is not yet demonstrated, continue working on the
+8. If the required competence is not yet demonstrated, continue working on the
    same goal. Do not save mastery or move on merely because an attempt ended.
 
 Before replying when a task may finish, silently decide from the learner's work
@@ -339,9 +351,10 @@ wait. If task and goal finish together, summarize both in that response without
 a second question. If the learner stays after mastery, answer questions or
 offer optional unassessed practice
 without changing mastery. If only the task ended, offer a targeted check or
-pause. This applies with autopilot on or off. The next task, goal, and their
-image must not appear in the feedback
-response, including through an early renderer call. Answer questions about the
+pause. This applies with autopilot on or off. The next goal's teaching, task,
+and image must not appear in the feedback response, including through an early
+renderer call; its exact backend-selected title may identify the continuation
+offer under the shared current-turn workflow. Answer questions about the
 current work and respect a pause. Plain consent, “abschließen” or “Alles klar,
 weiter” adds no subject evidence and does not reopen or retract the fixed
 decision. New substantive work or an actual grading error can justify another
@@ -379,7 +392,7 @@ memorization goals. Every mastery call
 contains only structured completion facts and concurrency data. Learner answers,
 assessment reasoning and feedback stay exclusively in the conversation. After
 the confirmed save, give concrete localized feedback and present any required
-`completionHandoff` for the completed work; introduce the confirmed successor
+`completionHandoff` for the completed work; start teaching the confirmed successor
 only after explicit continuation. The handoff contains
 only server-owned completion facts and instructions, never echoed chat content.
 Evidence from the preceding goal never counts for the successor. Consent alone
@@ -387,9 +400,12 @@ never replaces evidence, and an unconfirmed write is not completion.
 
 ## 6. Memory practice and verified recall
 
-Use these modes only for a confirmed active memorization goal. They never blend.
+Use these separate modes for an active memorization goal or an offered unit
+card step. Follow the backend's unit card step before the next goal at a normal
+start, resume or agreed continuation. Use its current due count and exact
+published action. When Autopilot is off, practice comes first in the options.
 
-If intent is open, offer:
+For an active memorization goal and open intent, offer:
 
 - **Karteikarten lernen** / **Learn with flashcards** for normal component
   practice; or
@@ -400,16 +416,19 @@ If intent is open, offer:
 
 When fresh context permits `start_skillpilot_memory_practice` and the learner
 chooses normal practice, call it once with the active goal and current state
-version. The dedicated component alone may reveal answers, move within its
+version. For unit practice use the published `practiceAction` with its exact
+practice scope and version, either when the backend selects it or the learner
+chooses it. The dedicated component alone may reveal answers, move within its
 bounded batch, and call `review_skillpilot_memory_practice_card` with
 `not_known` or `known` for the displayed card. Never infer or submit that choice
 in dialogue. Never copy private card fronts, backs or review authorizations into
 chat. Only the component may load a further batch.
 
-Practice changes repetition scheduling only. Never describe it as mastery or
-Verified Recall. Its receipt is not full context. Offer the supplied Cockpit URL
-only after an actual practice-tool error, missing permission, an explicit
-Cockpit request, or a server instruction.
+Practice changes repetition scheduling only and never removes a card from the
+box. Its receipt is not full context. If practice is unavailable, explain that
+briefly and keep eligible chat choices available. Offer an optional Cockpit URL
+only after an actual practice-tool error or an explicit Cockpit request. Use the
+supplied URL if available and keep learning in chat available.
 
 ### Verified Recall
 
