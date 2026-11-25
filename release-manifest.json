@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "marketplace": "skillpilot-chatgpt-marketplace",
-  "plugin": "skillpilot-coach-v1",
-  "version": "1.1.2",
+  "plugin": "skillpilot-coach",
+  "version": "1.2.0",
   "status": "experimental",
   "hostAcceptance": {
     "desktopInstall": "pending",
@@ -14,61 +14,61 @@
   },
   "source": {
     "repository": "https://github.com/enpasos/skillpilot",
-    "path": "ai/openai plugin/skillpilot-coach-v1"
+    "path": "ai/openai plugin/skillpilot-coach"
   },
-  "packageDigestSha256": "8a301fecdaf55de09cd39c9d8ba18191512aef7b1f910efaf2e75501e3274982",
+  "packageDigestSha256": "3ad26270620b34df8beac12c8fb7a70870165e42e0f1ec83e810a6bd2e7d54af",
   "files": {
     ".agents/plugins/marketplace.json": {
-      "bytes": 436,
-      "sha256": "461b4a3fe1144686a81152cc0f7b34c952c4f3c9eefab0af70564ac268f97717"
+      "bytes": 430,
+      "sha256": "70e37d8955b45c879899280a1327ff35b510d2e89b7c7856129428b26923a811"
     },
     ".github/workflows/validate.yml": {
       "bytes": 429,
       "sha256": "efd9ede245457222f5f19b90c5846b383ca83401b4cb6a4e5c8bb00f66217cd6"
     },
     "CHANGELOG.md": {
-      "bytes": 2402,
-      "sha256": "43d0d14ebcc67e39981aeeea50435f853225471961e59b5f94c06acd3d283283"
+      "bytes": 1137,
+      "sha256": "b2a313dc38190b616ae228f0a11d38f709e538dfb4964a799a7fc787904120ac"
     },
     "LICENSE": {
       "bytes": 10089,
       "sha256": "6bbe4ace8a1818f89b96dfdda9f9d4b9a178bc047c3dc2511a3d93d51f86d7ae"
     },
     "README.md": {
-      "bytes": 4675,
-      "sha256": "dc45f3a13df8d6473ec31c816972d0488f03cefdbd64ab632f92d23bb0eb0cdd"
+      "bytes": 4889,
+      "sha256": "d37e11a3a00562fd8e15be940b336ba07c0c98bc2dc923396c6638d2f2b5743f"
     },
-    "plugins/skillpilot-coach-v1/.codex-plugin/plugin.json": {
-      "bytes": 1837,
-      "sha256": "5cbf234f5f258daa3cc5e4f7f7880143f4aa65df5cd96abcf4ae1f23c0c1cd0f"
+    "plugins/skillpilot-coach/.codex-plugin/plugin.json": {
+      "bytes": 1883,
+      "sha256": "9c4445a1264ed2e7d5f5eea7f22b3ba458225e06e8841e7cb1a3cc1a041167c5"
     },
-    "plugins/skillpilot-coach-v1/.mcp.json": {
-      "bytes": 138,
-      "sha256": "951550967891b1091b27f175fa9c83c5b3f47eb45cffd4b5654423039a06829c"
+    "plugins/skillpilot-coach/.mcp.json": {
+      "bytes": 326,
+      "sha256": "f8fa7b0f6f7912a51367b4d3f3bfc9591e574ca1cdc12c2be6118503857a3558"
     },
-    "plugins/skillpilot-coach-v1/assets/favicon-96x96.png": {
+    "plugins/skillpilot-coach/assets/favicon-96x96.png": {
       "bytes": 2858,
       "sha256": "4fcfde09b5cec8834d807b050d96c388e70c47c876e92c7f017a3be2bfe49d4d"
     },
-    "plugins/skillpilot-coach-v1/assets/web-app-manifest-512x512.png": {
+    "plugins/skillpilot-coach/assets/web-app-manifest-512x512.png": {
       "bytes": 14619,
       "sha256": "abacb5b257a9d2ac1d277d87af0a6dd10d30ca64ecadab960a76a99e04c5affa"
     },
-    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/SKILL.md": {
-      "bytes": 23761,
-      "sha256": "7d65f37c5b2a70b8ded9219543e1cc1b67a977ef2239280aa46ab0cb1da8e31d"
+    "plugins/skillpilot-coach/skills/skillpilot-coach/SKILL.md": {
+      "bytes": 29965,
+      "sha256": "eb34f6b06456601402182dc1bd2f1cf0a57c868f0add5f9082fbb5613d424274"
     },
-    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/agents/openai.yaml": {
-      "bytes": 686,
-      "sha256": "865686840c733dd96ba5521f59037c12e5dae0617bd162aca01e1d24d8a2ac74"
+    "plugins/skillpilot-coach/skills/skillpilot-coach/agents/openai.yaml": {
+      "bytes": 675,
+      "sha256": "1c5e6c22abf4d428182f0492b549ad6cf86176edeee6f8e7928f19c871f6d262"
     },
-    "plugins/skillpilot-coach-v1/skills/skillpilot-coach-v1/references/coaching-policy.md": {
-      "bytes": 29621,
-      "sha256": "28a09a4ca0021903d7b0608486f0d2707ee5b28330d92bbb6a894d338f0969fd"
+    "plugins/skillpilot-coach/skills/skillpilot-coach/references/coaching-policy.md": {
+      "bytes": 31187,
+      "sha256": "d4c0e9e908a3998fb52e79d84b8617101f864e2e7d66fdb4a4f1ba3b795ed884"
     },
     "validate.mjs": {
-      "bytes": 6042,
-      "sha256": "2d9754f978e8b93c2d1c48f5977d6cb9a0ce4370423b9587706574cafb54da48"
+      "bytes": 6218,
+      "sha256": "5090d894a988082af6529e98d8672e5e4e3535d16c34d65166809615185dcd41"
     }
   }
 }
